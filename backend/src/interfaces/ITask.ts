@@ -3,4 +3,5 @@ export default interface ITask {
   userId: number,
   description: string,
   isDone: boolean
+  createdAt: Date
 }

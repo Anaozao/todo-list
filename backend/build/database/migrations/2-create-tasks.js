@@ -24,6 +24,11 @@ exports.default = {
                 allowNull: false,
                 field: 'is_done',
             },
+            createdAt: {
+                type: sequelize_1.DataTypes.DATE,
+                allowNull: false,
+                field: 'created_at',
+            },
         });
     },
     down(queryInterface) {

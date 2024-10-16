@@ -4,3 +4,15 @@ export default interface IUser {
   username: string,
   password: string,
 }
+
+export interface IUserWithoutPass {
+  id: number,
+  email: string,
+  username: string,
+}
+
+export interface ICreateUser {
+  email: string,
+  username: string,
+  password: string,
+}

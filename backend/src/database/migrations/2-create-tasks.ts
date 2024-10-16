@@ -24,6 +24,11 @@ export default {
         allowNull: false,
         field: 'is_done',
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: 'created_at',
+      },
     });
   },
   down(queryInterface: QueryInterface) {

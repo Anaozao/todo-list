@@ -1,5 +1,6 @@
 import * as express from 'express';
 import 'express-async-errors';
+import UserRouter from './routers/UserRouter';
 
 class App {
   public app: express.Express;
@@ -10,7 +11,6 @@ class App {
     this.config();
 
     this.app.get('/', (req, res) => res.json({ ok: true }));
-
   }
 
   private config():void {
@@ -23,6 +23,7 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    this.app.use('/users', UserRouter);
   }
 
   public start(PORT: string | number): void {
