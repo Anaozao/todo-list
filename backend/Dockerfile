@@ -11,5 +11,4 @@ COPY . .
 # A aplicação expõe a porta 3001
 EXPOSE 3001
 # Configura os comandos para iniciar a aplicação
-ENTRYPOINT [ "npm", "run" ]
-CMD [ "dev" ]
+CMD ["npm", "run", "dev"]

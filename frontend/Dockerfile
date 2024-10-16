@@ -1,6 +1,7 @@
+# Usa a imagem node:18 como base
 FROM node:18
-# Muda para o diretório de trabalho /app-backend
-WORKDIR /app-backend
+# Muda para o diretório de trabalho /app-frontend
+WORKDIR /app-frontend
 # Copia os package.json e package-lock.json para o container
 COPY ./package*.json ./
 # Instala as dependências Node
@@ -10,5 +11,4 @@ COPY . .
 # A aplicação expõe a porta 3001
 EXPOSE 3000
 # Configura os comandos para iniciar a aplicação
-ENTRYPOINT [ "npm", "run" ]
-CMD [ "dev" ]
+CMD ["npm", "run", "dev"]
