@@ -16,7 +16,6 @@ router.get(
 );
 router.post(
   '/',
-  (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),
   (req: Request, res: Response) => new UserControler().createUser(req, res),
 );
 
