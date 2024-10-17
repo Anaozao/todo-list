@@ -3,7 +3,7 @@ import CreateUser from './CreateUser';
 import GetUser from './GetUser';
 
 export default class UserService {
-  private create = new CreateUser().createUser;
+  private create = new CreateUser();
   private get = new GetUser();
 
   async getByEmail(email: string) {
@@ -19,7 +19,7 @@ export default class UserService {
   }
 
   async createUser(userData: ICreateUser) {
-    const { status, data } = await this.create(userData);
+    const { status, data } = await this.create.createUser(userData);
 
     return { status, data };
   }
