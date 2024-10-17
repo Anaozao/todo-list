@@ -8,4 +8,4 @@ export const http = {
   NOT_FOUND: 404,
 };
 
-export const mapStatusHttp = (status: keyof typeof http) => http[status] || 500;
+export const mapStatusHTTP = (status: keyof typeof http) => http[status] || 500;

@@ -16,7 +16,7 @@ export default {
         field: 'user_id',
       },
       description: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       isDone: {

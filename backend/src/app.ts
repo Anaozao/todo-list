@@ -1,6 +1,8 @@
 import * as express from 'express';
 import 'express-async-errors';
 import UserRouter from './routers/UserRouter';
+import TaskRouter from './routers/TaskRouter';
+import LoginRouter from './routers/LoginRouter';
 
 class App {
   public app: express.Express;
@@ -24,6 +26,8 @@ class App {
     this.app.use(express.json());
     this.app.use(accessControl);
     this.app.use('/users', UserRouter);
+    this.app.use('/tasks', TaskRouter);
+    this.app.use('/login', LoginRouter);
   }
 
   public start(PORT: string | number): void {

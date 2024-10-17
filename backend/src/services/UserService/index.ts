@@ -19,7 +19,8 @@ export default class UserService {
   }
 
   async createUser(userData: ICreateUser) {
-    const modelResponse = await this.create(userData);
-    return modelResponse;
+    const { status, data } = await this.create(userData);
+
+    return { status, data };
   }
 }

@@ -5,3 +5,12 @@ export default interface ITask {
   isDone: boolean
   createdAt: Date
 }
+
+export interface ITaskWithUser extends ITask {
+  username: string
+}
+
+export interface CreateTaskData {
+  userId: number,
+  description: string,
+}
