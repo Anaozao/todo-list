@@ -6,6 +6,9 @@ services:
     ports:
       - 3000:3000
     working_dir: /app-frontend
+    environment:
+      - VITE_PORT=5173
+      - VITE_BACK_URL=http://localhost/3001
     healthcheck:
       test: [ "CMD", "lsof", "-t", "-i:3000" ]
       timeout: 10s

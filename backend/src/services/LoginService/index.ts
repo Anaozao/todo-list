@@ -1,7 +1,7 @@
 import { compareSync } from 'bcryptjs';
-import SequelizeUser from '../database/models/SequelizeUser';
-import { ILogin } from '../interfaces/ILogin';
-import JwtUtils from '../utils/jwtUtils';
+import SequelizeUser from '../../database/models/SequelizeUser';
+import { ILogin } from '../../interfaces/ILogin';
+import JwtUtils from '../../utils/jwtUtils';
 
 export default class LoginService {
   private model = SequelizeUser;
@@ -17,7 +17,7 @@ export default class LoginService {
     const user = await this.model.findOne({ where: { email }, raw: true });
 
     if (!user || !compareSync(password, user.password)) {
-      return { status: 'INVALID_VALUE', data: { message: 'Usuário ou senha inválidos' } };
+      return { status: 'UNAUTHORIZED', data: { message: 'Usuário ou senha inválidos' } };
     }
     const { password: _, ...userWithoutPassword } = user;
 
