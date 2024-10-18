@@ -10,8 +10,8 @@ export default class CreateTask {
     if (error) return { status: error.status, data: { message: error.message } };
 
     const newTaskData = {
-      description: taskData.description,
       userId: taskData.userId,
+      description: taskData.description,
       isDone: false,
       createdAt: new Date(),
     };

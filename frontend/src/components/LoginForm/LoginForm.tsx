@@ -3,11 +3,13 @@ import { fetchLogin } from "../../utils/API"
 import { GiNotebook } from "react-icons/gi";
 import styles from './LoginForm.module.css'
 import { Link, useNavigate } from "react-router-dom";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 function LoginForm() {
   const [formInfos, setFormInfos] = useState({email: '', password: ''})
   const [errorMessage, setErrorMessage] = useState('')
   const navigate = useNavigate();
+  const { setItem } = useLocalStorage()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormInfos((prev) => (
@@ -30,7 +32,7 @@ function LoginForm() {
       }, 5000);
       return;
     }
-    localStorage.setItem('token', JSON.stringify(response.token))
+    setItem('token', response.token)
     navigate('/')
   }
 
@@ -41,7 +43,7 @@ function LoginForm() {
         <GiNotebook className={styles.noteIcon}/>
         Todo List
         </h1>
-      <p className={styles.errorMsg}>{errorMessage}</p>
+      { errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
       <div className={styles.inputsDivs}>
         <label htmlFor="email"></label>
         <input

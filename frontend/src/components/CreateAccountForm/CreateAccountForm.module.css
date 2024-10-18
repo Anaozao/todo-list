@@ -55,10 +55,17 @@
 }
 
 .buttons {
-  border: 1px solid black;
+  background-color: rgb(194, 37, 37);
+  border: 0.5px solid black;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
   cursor: pointer;
-  font-size: 15px;
-  height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  height: 40px;
   width: 40%;
+
+  &:active {
+    background-color: rgb(150, 31, 31);
+  }
 }

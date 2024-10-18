@@ -1,0 +1,19 @@
+.taskCard {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  gap: 10px;
+  width: 500px;
+}
+
+.textDiv {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+}
+
+.description {
+  width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+}

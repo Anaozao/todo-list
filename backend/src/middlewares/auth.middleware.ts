@@ -24,7 +24,10 @@ export default class Auth {
     }
     try {
       const token = this.authorization.split(' ')[1];
+      console.log(token);
+      
       const user = this.jwt.validateToken(token);
+
       if (!user) {
         return this.res.status(401).json({ message: 'Token precisa ser um token valido' });
       }

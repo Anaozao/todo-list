@@ -1,0 +1,28 @@
+.homePage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  align-content: center;
+  border-bottom: 1px solid black;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100px;
+  width: 98%;
+}
+
+.buttonsDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}

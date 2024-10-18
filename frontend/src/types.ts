@@ -5,3 +5,32 @@ export type CreateAccountData = {
   username: string,
   password: string
 }
+
+export type UserFromDecodedToken = {
+  email: string,
+  iat: number,
+  id: number,
+  username: string
+}
+
+export type ReduxState = {
+  user: {
+    username: string,
+    email: string,
+    id: number,
+    isLogged: boolean,
+  },
+  tasks: {
+    allTasks: TaskType[]
+  }
+}
+
+export type TaskType = {
+  id: number,
+  userId: number,
+  description: string,
+  isDone: boolean
+  createdAt: string
+}
+
+export type CreateTask =  {userId: number, description: string}

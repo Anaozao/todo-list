@@ -3,6 +3,12 @@ import 'express-async-errors';
 import UserRouter from './routers/UserRouter';
 import TaskRouter from './routers/TaskRouter';
 import LoginRouter from './routers/LoginRouter';
+import * as cors from 'cors'
+
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  optionSuccessStatus: 200
+}
 
 class App {
   public app: express.Express;
@@ -23,6 +29,7 @@ class App {
       next();
     };
 
+    this.app.use(cors(corsOptions))
     this.app.use(express.json());
     this.app.use(accessControl);
     this.app.use('/users', UserRouter);
