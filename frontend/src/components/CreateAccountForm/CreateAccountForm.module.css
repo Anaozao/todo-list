@@ -1,0 +1,64 @@
+.form {
+  align-items: center;
+  background-color: rgb(214, 214, 214);
+  border: 0.5px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  position: relative;
+  height: 80%;
+  width: 400px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.errorMsg {
+  background-color: red;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 5px 0 5px;
+  position: fixed;
+  text-align: center;
+  top: 10px;
+}
+
+.successMsg {
+  background-color: green;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 5px 0 5px;
+  position: fixed;
+  text-align: center;
+  top: 10px;
+}
+
+.inputs {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 50px;
+  padding: 5px;
+  width: 300px;
+}
+
+.buttonsDiv {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  height: 30px;
+  width: 40%;
+}
