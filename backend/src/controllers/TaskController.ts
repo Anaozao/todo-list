@@ -27,4 +27,17 @@ export default class TaskController {
     const { status, data } = await this.taskService.createTask({ userId, description });
     res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
   }
+
+  async updateTask(req: Request, res: Response) {
+    const {id} = req.params
+    const {isDone} = req.body
+
+    const newReq = {
+      id: Number(id),
+      isDone,
+    }
+    
+    const { status, data } = await this.taskService.updateTask(newReq);
+    res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
+  }
 }

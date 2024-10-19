@@ -1,10 +1,12 @@
 import { CreateTaskData } from '../../interfaces/ITask';
 import CreateTask from './CreateTask';
 import GetTask from './GetTask';
+import UpdateTask, { UpdateTaskType } from './UpdateTask';
 
 export default class TaskService {
   private get = new GetTask();
   private create = new CreateTask();
+  private update = new UpdateTask()
 
   async getAll() {
     const { status, data } = await this.get.all();
@@ -23,6 +25,11 @@ export default class TaskService {
 
   async createTask(taskData: CreateTaskData) {
     const { status, data } = await this.create.create(taskData);
+    return { status, data };
+  }
+
+  async updateTask({id, isDone}: UpdateTaskType) {
+    const { status, data } = await this.update.update({id, isDone});
     return { status, data };
   }
 }

@@ -1,14 +1,17 @@
 .taskCard {
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid rgba(70, 70, 70, 0.596);
+  border-radius: 5px;
   display: flex;
   gap: 10px;
-  width: 500px;
+  padding: 0 5px 0 5px;
+  width: 80%;
 }
 
 .textDiv {
   display: flex;
   flex-direction: column;
+  gap: 3px;
   max-width: 90%;
 }
 

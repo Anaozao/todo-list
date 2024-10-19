@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { TaskType } from "../../types"
 import styles from './TaskCard.module.css'
+import { fetchUpdataTask } from "../../utils/API";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
-function TaskCard({description, createdAt, isDone}: TaskType) {
+function TaskCard({description, createdAt, isDone, id}: TaskType) {
   const [checked, setChecked] = useState(false);
+  const {getItem} = useLocalStorage()
+  const token = getItem('token')
 
 
   
@@ -19,8 +23,15 @@ function TaskCard({description, createdAt, isDone}: TaskType) {
     setChecked(isDone)
   }, [])
 
-  const handleCheck = () => {
+  const handleCheck = async () => {
     setChecked(!checked)
+    const payload = {
+      id,
+      isDone: !isDone
+    }
+    const response = await fetchUpdataTask(payload, token)
+    console.log(response);
+    
   }
 
   return (

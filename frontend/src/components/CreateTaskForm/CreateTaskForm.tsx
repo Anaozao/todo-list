@@ -43,7 +43,7 @@ function CreateTaskForm() {
 
   return (
     <form className={styles.taskForm}>
-      <div>
+      <div className={styles.inputDiv}>
         <label htmlFor="description"></label>
         <input
           type="text"
@@ -51,10 +51,13 @@ function CreateTaskForm() {
           id='description'
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder='Novo item...'
+          className={styles.inputs}
         />
       </div>
       <button
         onClick={handleCreate}
+        className={styles.addButton}
       >
         Adicionar
       </button>

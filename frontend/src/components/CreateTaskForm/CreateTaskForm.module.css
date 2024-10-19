@@ -1,0 +1,38 @@
+.taskForm {
+  align-items: center;
+  background-color: rgb(229, 255, 135);
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5px;
+  margin-top: 20px;
+  width: 80%;
+  height: 100px;
+}
+
+.inputDiv {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.inputs {
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  padding-left: 5px;
+  width: 90%;
+}
+
+.addButton {
+  background-color: brown;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 700;
+  height: 25px;
+  width: 50%;
+}

@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react";
-// import CreateTaskForm from "../CreateTaskForm/CreateTaskForm";
 import styles from './TasksSection.module.css'
 import { ReduxState, TaskType } from "../../types";
-// import TaskCard from "../TaskCard/TaskCard";
 import { useSelector } from "react-redux";
 import TaskCard from "../TaskCard/TaskCard";
-
-// type TasksSectionProps = {
-//   token: string
-// }
 
 function TasksSection() {
   const [tasks, setTasks] = useState<TaskType[]>([])

@@ -13,10 +13,7 @@ export default class GetTask {
   private userModel = SequelizeUser;
 
   async all() {
-    console.log(this.taskModel);
     const tasks = await this.taskModel.findAll(sequelizeConfig);
-    console.log(tasks);
-
     return { status: 'SUCCESSFUL', data: tasks };
   }
 

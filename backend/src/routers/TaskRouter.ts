@@ -21,6 +21,12 @@ router.get(
   (req: Request, res: Response) => new TaskController().getById(req, res),
 );
 
+router.patch(
+  '/:id',
+  (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),
+  (req: Request, res: Response) => new TaskController().updateTask(req, res),
+);
+
 router.post(
   '/',
   (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),

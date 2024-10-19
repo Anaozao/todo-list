@@ -1,4 +1,4 @@
-import { CreateAccountData, CreateTask } from "../types";
+import { CreateAccountData, CreateTask, UpdateTask } from "../types";
 
 const baseUrl = import.meta.env.VITE_BACK_URL
 
@@ -67,6 +67,28 @@ export const fetchCreateTask = async ({userId, description}: CreateTask, token: 
       body: JSON.stringify({
         userId,
         description
+      }),
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-type': 'application/json',
+      }
+  
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}
+
+export const fetchUpdataTask = async ({id, isDone}: UpdateTask, token: string) => {
+  
+  try {
+    const response = await fetch(`${baseUrl}/tasks/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        isDone
       }),
       headers: {
         'Authorization': `Bearer ${token}`,

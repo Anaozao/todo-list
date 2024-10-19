@@ -34,3 +34,5 @@ export type TaskType = {
 }
 
 export type CreateTask =  {userId: number, description: string}
+
+export type UpdateTask =  {id: number, isDone: boolean}
