@@ -8,7 +8,9 @@
   justify-content: space-evenly;
   gap: 5px;
   margin-top: 20px;
+  position: absolute;
   width: 80%;
+  top: 10px;
   height: 100px;
 }
 

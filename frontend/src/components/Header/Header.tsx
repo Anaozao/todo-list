@@ -15,7 +15,6 @@ function Header() {
   const token: string = getItem('token')
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   useEffect(() => {
     const decodedToken: UserFromDecodedToken = jwtDecode(token)
     dispatch(setUser(decodedToken))
