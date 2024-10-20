@@ -31,3 +31,9 @@
   background: #555;
   /* Cor da barra de rolagem ao passar o mouse */
 }
+
+@media (max-width: 600px) {
+  /* .tasksSection {
+    
+  } */
+}

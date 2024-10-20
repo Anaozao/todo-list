@@ -15,3 +15,9 @@
   height: 97%;
   width: 80%;
 }
+
+@media (max-width: 600px) {
+  .main {
+    width: 100vw;
+  }
+}

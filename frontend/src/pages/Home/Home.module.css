@@ -39,3 +39,13 @@
   font-size: 18px;
   font-weight: 700;
 }
+
+@media (max-width: 600px) {
+  .homePage {
+    width: 95%;
+  }
+
+  .main {
+    width: 98%;
+  }
+}

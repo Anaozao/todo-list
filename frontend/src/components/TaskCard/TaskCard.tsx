@@ -52,15 +52,12 @@ function TaskCard({description, createdAt, isDone, id}: TaskType) {
 
   return (
     <div className={styles.taskCard}>
-      <div className={styles.buttonsDiv}>
         <input
           type="checkbox"
           checked={checked}
           onChange={handleCheck}
           className={styles.checkBox}
         />
-        
-      </div>
       <div className={styles.textDiv}>
         <p className={styles.description}
         >
