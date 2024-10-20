@@ -103,3 +103,23 @@ export const fetchUpdataTask = async ({id, isDone}: UpdateTask, token: string) =
     console.error(e)
   }
 }
+
+
+export const fetchDeleteTask = async (id: number, token: string) => {
+  
+  try {
+    const response = await fetch(`${baseUrl}/tasks/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-type': 'application/json',
+      }
+  
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}

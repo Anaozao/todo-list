@@ -1,17 +1,15 @@
 .taskForm {
   align-items: center;
-  background-color: rgb(229, 255, 135);
+  background-color: rgb(233, 182, 16);
   border: 1px solid grey;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 5px;
+  height: 150px;
   margin-top: 20px;
-  position: absolute;
   width: 80%;
-  top: 10px;
-  height: 100px;
 }
 
 .inputDiv {
@@ -24,17 +22,45 @@
 .inputs {
   border: 0.5px solid grey;
   border-radius: 5px;
-  height: 30px;
+  height: 35px;
+  font-size: 18px;
   padding-left: 5px;
   width: 90%;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.errorMessage {
+  position: absolute;
+  left: 10px;
 }
 
 .addButton {
   background-color: brown;
   border: 0.5px solid grey;
   border-radius: 5px;
+  cursor: pointer;
   font-size: 17px;
   font-weight: 700;
-  height: 25px;
-  width: 50%;
+  height: 30px;
+  width: 30%;
+
+  &:active {
+    background-color: rgba(165, 42, 42, 0.664);
+  }
+}
+
+@media (max-width: 600px) {
+  .taskForm {
+    width: 100%;
+  }
+
+  .addButton {
+    width: 80%;
+  }
 }

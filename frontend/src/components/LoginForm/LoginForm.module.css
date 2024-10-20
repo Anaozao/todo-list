@@ -14,7 +14,7 @@
 }
 
 .errorMsg {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.89);
   border: none;
   border-radius: 3px;
   font-size: 20px;
@@ -59,4 +59,16 @@
 .linksDiv {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .form {
+    height: 300px;
+    width: 80%;
+  }
+
+  .errorMsg {
+    font-size: 15px;
+    height: 20px;
+  }
 }

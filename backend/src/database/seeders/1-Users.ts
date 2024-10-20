@@ -6,9 +6,9 @@ export default {
   up: async (queryInterface: QueryInterface) => {
     await queryInterface.bulkInsert('users', [
       {
-        username: 'testUser1',
-        email: 'testUser1@email.com',
-        password: hashSync('password', 10),
+        username: 'Túlio',
+        email: 'tulio@email.com',
+        password: hashSync('senhaforte', 10),
       },
     ], {});
   },

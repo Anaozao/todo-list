@@ -53,7 +53,7 @@ function CreateAccountFrorm() {
     setTimeout(() => {
       setErrorMessage('')
       navigate('/login')
-    }, 5000)
+    }, 3000)
   }
 
   return (
@@ -86,6 +86,7 @@ function CreateAccountFrorm() {
           onChange={handleChange}
           className={styles.inputs}
           id="username"
+          maxLength={10}
         />
       </div>
       <div>

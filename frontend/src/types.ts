@@ -21,7 +21,8 @@ export type ReduxState = {
     isLogged: boolean,
   },
   tasks: {
-    allTasks: TaskType[]
+    allTasks: TaskType[],
+    deletTask: number
   }
 }
 

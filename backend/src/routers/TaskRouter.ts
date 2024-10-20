@@ -27,6 +27,12 @@ router.patch(
   (req: Request, res: Response) => new TaskController().updateTask(req, res),
 );
 
+router.delete(
+  '/:id',
+  (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),
+  (req: Request, res: Response) => new TaskController().deletTask(req, res),
+);
+
 router.post(
   '/',
   (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),

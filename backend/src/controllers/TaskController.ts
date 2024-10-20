@@ -40,4 +40,10 @@ export default class TaskController {
     const { status, data } = await this.taskService.updateTask(newReq);
     res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
   }
+
+  async deletTask(req: Request, res: Response) {
+    const {id} = req.params;
+    const {status, data } = await this.taskService.deleteTask(Number(id))
+    res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
+  }
 }

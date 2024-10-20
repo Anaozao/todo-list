@@ -18,7 +18,9 @@
 }
 
 .errorMsg {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.897);
+  border: none;
+  border-radius: 3px;
   font-size: 18px;
   font-weight: 700;
   padding: 0 5px 0 5px;
@@ -28,7 +30,7 @@
 }
 
 .successMsg {
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.925);
   font-size: 18px;
   font-weight: 700;
   padding: 0 5px 0 5px;
@@ -68,4 +70,16 @@
   &:active {
     background-color: rgb(150, 31, 31);
   }
+}
+
+@media (max-width: 600px) {
+  .form {
+    height: 70%;
+    width: 95%;
+  }
+
+  .inputs {
+    height: 35px;
+  }
+
 }

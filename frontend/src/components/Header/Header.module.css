@@ -1,8 +1,41 @@
 .header {
-  align-content: center;
+  align-items: center;
   border-bottom: 1px solid black;
-  justify-items: center;
-  display: grid;
+  justify-content: space-evenly;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   width: 80%;
+}
+
+.buttonsDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:active {
+    color: rgba(0, 0, 0, 0.712);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .header {
+    gap: 5px;
+  }
+
+  .title {
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .logoutBtn {
+    font-size: 18px;
+  }
 }

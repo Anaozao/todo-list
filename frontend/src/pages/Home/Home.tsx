@@ -27,9 +27,9 @@ function Home() {
 
   return (
     <section className={styles.homePage}>
-      <h1 className={styles.title}>Suas tarefas</h1>
       <div className={styles.main}>
         <CreateTaskForm />
+        <h1 className={styles.title}>Suas tarefas:</h1>
         <TasksSection />
       </div>
     </section>

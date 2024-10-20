@@ -20,6 +20,11 @@ const createUserValidation = (userData: ICreateUser) => {
       status: 'INVALID_VALUE',
       message: 'O nome de usuário deve ter no mínimo 3 caracteres' };
   }
+  if(username.length > 10) {
+    return {
+      status: 'INVALID_VALUE',
+      message: 'O nome de usuário deve ter no máximo 10 caracteres' };
+  }
 };
 
 export default createUserValidation;

@@ -1,4 +1,3 @@
-import { boolean } from 'joi';
 import SequelizeTask from '../../database/models/SequelizeTask';
 
 export type UpdateTaskType = {
@@ -21,6 +20,6 @@ export default class UpdateTask {
       {isDone: isDone },
       {where: {id}})
 
-      return { status: 'SUCCESSFUL', data: { message: 'updated' } };
+      return { status: 'SUCCESSFUL', data: { message: 'Atualizado' } };
     }
 }

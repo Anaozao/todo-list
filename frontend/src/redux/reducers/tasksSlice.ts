@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
-    allTasks: []
+    allTasks: [],
+    deletTask: 0
   },
   reducers: {
     setTasks: (state, { payload }) => ({

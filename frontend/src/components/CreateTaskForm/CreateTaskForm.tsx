@@ -10,6 +10,7 @@ function CreateTaskForm() {
   const token = JSON.parse(localStorage.getItem('token') || '[]')
   const [description, setDescription] = useState('')
   const dispatch = useDispatch()
+  const [errorMessage, setErrorMessage] = useState('')
 
   const getUserId = () => {
     const decode: UserFromDecodedToken = jwtDecode(token)
@@ -19,7 +20,14 @@ function CreateTaskForm() {
 
   const handleCreate = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
-
+    if(description.length < 5) {
+      setErrorMessage('Mínimo de 5 caracteres')
+      setTimeout(() => {
+        setErrorMessage('')
+      }, 5000)
+      
+      return
+    }
     const newTask = {
       userId: getUserId(),
       description,
@@ -55,12 +63,15 @@ function CreateTaskForm() {
           className={styles.inputs}
         />
       </div>
-      <button
-        onClick={handleCreate}
-        className={styles.addButton}
-      >
-        Adicionar
-      </button>
+      <div className={styles.buttonDiv}>
+        <p className={styles.errorMessage}>{errorMessage}</p>
+        <button
+          onClick={handleCreate}
+          className={styles.addButton}
+        >
+          Adicionar
+        </button>
+      </div>
     </form>
   )
 }

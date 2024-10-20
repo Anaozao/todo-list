@@ -1,6 +1,7 @@
 .homePage {
   align-items: center;
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(235, 235, 235);
+  box-shadow: 2px 2px 5px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -11,13 +12,11 @@
 }
 
 .title {
-  font-size: 40px;
+  font-size: 25px;
 }
 
 .main {
   align-items: center;
-  background-color: rgb(217, 255, 160);
-  border: 1.5px solid rgba(102, 102, 102, 0.473);
   border-radius: 10px;
   display: flex;
   justify-content: center;

@@ -2,7 +2,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   gap: 20px;
+  flex-grow: 1;
   padding: 20px 0;
   overflow: auto;
   width: 100%;

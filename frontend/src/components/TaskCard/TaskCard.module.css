@@ -1,16 +1,22 @@
 .taskCard {
   align-items: center;
-  border: 1px solid rgba(70, 70, 70, 0.596);
+  background-color: rgb(209, 233, 255);
+  border: 2px solid rgba(70, 70, 70, 0.596);
   border-radius: 5px;
+  justify-content: space-between;
   display: flex;
   gap: 10px;
   padding: 0 5px 0 5px;
+  position: relative;
   width: 80%;
 }
 
 .textDiv {
   display: flex;
   flex-direction: column;
+  font-size: 18px;
+  /* font-weight: 700; */
+  flex-grow: 1;
   gap: 3px;
   max-width: 90%;
 }
@@ -19,4 +25,95 @@
   width: 100%;
   word-wrap: break-word;
   white-space: normal;
+}
+
+.buttonsDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.checkBox {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+
+.deletBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.deletIcon {
+  color: red;
+  font-size: large;
+  font-size: 14px;
+}
+
+.popupPage {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.486);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.popup {
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+
+}
+
+.span {
+  font-weight: 770;
+}
+
+.text {
+  font-size: 25px;
+  text-align: center;
+}
+
+.popupButtonsDiv {
+  display: flex;
+  gap: 10px;
+  width: 80%;
+}
+
+.buttons {
+  background-color: brown;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 700;
+  height: 25px;
+  width: 50%;
+
+  &:active {
+    background-color: rgba(165, 42, 42, 0.664);
+  }
+}
+
+@media (max-width: 600px) {
+  /* .taskCard {
+    width: 98%;
+  } */
 }

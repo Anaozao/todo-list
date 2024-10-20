@@ -41,7 +41,7 @@ function LoginForm() {
     <form className={styles.form}>
       <h1 className={styles.title}>
         <GiNotebook className={styles.noteIcon}/>
-        Todo List
+        To Do List
         </h1>
       { errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
       <div className={styles.inputsDivs}>

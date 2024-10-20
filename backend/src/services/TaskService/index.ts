@@ -1,5 +1,6 @@
 import { CreateTaskData } from '../../interfaces/ITask';
 import CreateTask from './CreateTask';
+import DeleteTask from './DeletTask';
 import GetTask from './GetTask';
 import UpdateTask, { UpdateTaskType } from './UpdateTask';
 
@@ -7,6 +8,7 @@ export default class TaskService {
   private get = new GetTask();
   private create = new CreateTask();
   private update = new UpdateTask()
+  private delete = new DeleteTask()
 
   async getAll() {
     const { status, data } = await this.get.all();
@@ -30,6 +32,11 @@ export default class TaskService {
 
   async updateTask({id, isDone}: UpdateTaskType) {
     const { status, data } = await this.update.update({id, isDone});
+    return { status, data };
+  }
+
+  async deleteTask(id: number) {
+    const {status, data } = await this.delete.delete(id)
     return { status, data };
   }
 }
