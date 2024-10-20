@@ -123,3 +123,22 @@ export const fetchDeleteTask = async (id: number, token: string) => {
     console.error(e)
   }
 }
+
+export const fetchUser = async (id: number, token: string) => {
+
+  try {
+    const response = await fetch(`${baseUrl}/users/${id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-type': 'application/json',
+      }
+  
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}

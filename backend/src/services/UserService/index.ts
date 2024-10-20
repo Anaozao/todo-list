@@ -6,8 +6,8 @@ export default class UserService {
   private create = new CreateUser();
   private get = new GetUser();
 
-  async getByEmail(email: string) {
-    const { status, data } = await this.get.byEmail(email);
+  async getById(id: number) {
+    const { status, data } = await this.get.byId(id);
 
     return { status, data };
   }

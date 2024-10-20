@@ -9,6 +9,7 @@ export default {
         username: 'Túlio',
         email: 'tulio@email.com',
         password: hashSync('senhaforte', 10),
+        is_active: true
       },
     ], {});
   },

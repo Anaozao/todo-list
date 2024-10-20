@@ -13,6 +13,7 @@ InferCreationAttributes<SequelizeUser>> {
   declare email: string;
   declare username: string;
   declare password: string;
+  declare isActive: boolean
 }
 
 SequelizeUser.init({
@@ -33,6 +34,10 @@ SequelizeUser.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  isActive: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  }
 }, {
   sequelize: db,
   modelName: 'users',

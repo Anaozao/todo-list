@@ -10,7 +10,7 @@ router.get(
   (req: Request, res: Response) => new UserControler().getAll(req, res),
 );
 router.get(
-  '/find',
+  '/:id',
   (req: Request, res: Response, next: NextFunction) => new Auth(req, res, next).auth(),
   (req: Request, res: Response) => new UserControler().getUser(req, res),
 );

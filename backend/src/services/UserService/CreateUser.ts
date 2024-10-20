@@ -21,6 +21,7 @@ export default class CreateUser {
       email,
       username,
       password: hashSync(password),
+      isActive: false
     };
 
     const { dataValues } = await this.model.create(newUser);

@@ -6,8 +6,8 @@ export default class UserController {
   private userService = new UserService();
 
   async getUser(req: Request, res: Response) {
-    const { email } = req.body;
-    const { status, data } = await this.userService.getByEmail(email);
+    const { id } = req.params;
+    const { status, data } = await this.userService.getById(Number(id));
     res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
   }
 

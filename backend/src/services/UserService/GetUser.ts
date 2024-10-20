@@ -5,12 +5,8 @@ import { ServiceResponse } from '../../interfaces/ServiceResponse';
 export default class GetUser {
   private model = SequelizeUser;
 
-  async byEmail(email: string): Promise<ServiceResponse<IUserWithoutPass>> {
-    if (!email) {
-      return { status: 'BAD_REQUEST', data: { message: 'O campo "email" é obrigatório' } };
-    }
-
-    const user: IUser | null = await this.model.findOne({ where: { email }, raw: true });
+  async byId(id: number): Promise<ServiceResponse<IUserWithoutPass>> {
+    const user: IUser | null = await this.model.findOne({ where: { id }, raw: true });
     if (!user) {
       return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
     }

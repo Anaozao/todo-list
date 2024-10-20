@@ -19,6 +19,14 @@ export default class LoginService {
     if (!user || !compareSync(password, user.password)) {
       return { status: 'UNAUTHORIZED', data: { message: 'Usuário ou senha inválidos' } };
     }
+
+    if (!user.isActive) {
+      return {
+        status: "UNAUTHORIZED",
+        data: {message: "Nessessário confirmar o cadastro, verifique o link de confirmação no email"}
+      }
+    }
+
     const { password: _, ...userWithoutPassword } = user;
 
     const token = new JwtUtils().createToken(userWithoutPassword);
