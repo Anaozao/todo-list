@@ -1,15 +1,16 @@
 import * as express from 'express';
 import 'express-async-errors';
+import * as cors from 'cors';
 import UserRouter from './routers/UserRouter';
 import TaskRouter from './routers/TaskRouter';
 import LoginRouter from './routers/LoginRouter';
-import VerifyEmailRouter from './routers/VerifyEmailRouter'
-import * as cors from 'cors'
+import VerifyEmailRouter from './routers/VerifyEmailRouter';
+import AccountRecoveryController from './routers/AccountRecoveryRouter';
 
 const corsOptions = {
   origin: 'http://localhost:5173',
-  optionSuccessStatus: 200
-}
+  optionSuccessStatus: 200,
+};
 
 class App {
   public app: express.Express;
@@ -30,13 +31,14 @@ class App {
       next();
     };
 
-    this.app.use(cors(corsOptions))
+    this.app.use(cors(corsOptions));
     this.app.use(express.json());
     this.app.use(accessControl);
     this.app.use('/users', UserRouter);
     this.app.use('/tasks', TaskRouter);
     this.app.use('/login', LoginRouter);
-    this.app.use('/verify-email', VerifyEmailRouter)
+    this.app.use('/verify-email', VerifyEmailRouter);
+    this.app.use('/recovery-account', AccountRecoveryController);
   }
 
   public start(PORT: string | number): void {

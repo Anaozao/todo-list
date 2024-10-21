@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   frontend:
-    container_name: app_frontend
+    container_name: todo_frontend
     build: ./frontend
     ports:
       - 3000:3000
@@ -9,14 +9,10 @@ services:
     environment:
       - VITE_PORT=5173
       - VITE_BACK_URL=http://localhost/3001
-    healthcheck:
-      test: [ "CMD", "lsof", "-t", "-i:3000" ]
-      timeout: 10s
-      retries: 5
     depends_on:
       - backend
   backend:
-    container_name: app_backend
+    container_name: todo_backend
     build: ./backend
     ports:
       - 3001:3001
@@ -24,8 +20,8 @@ services:
     volumes:
       - ./backend/src:/app-backend/src
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+
     environment:
       - APP_PORT=3001
       - JWT_SECRET=jwt_secret
@@ -33,24 +29,15 @@ services:
       - DB_PASS=123456
       - DB_HOST=db
       - DB_PORT=3306
+      - FRONT_BASE_URL=http://localhost:5173
       - EMAIL_SERVICE=gmail
       - ORIGIN_EMAIL=tutyparis2015@gmail.com
       - EMAIL_PASS=jlwcuydpmajdkwmk
-    healthcheck:
-      test: [ "CMD", "lsof", "-t", "-i:3001" ]
-      timeout: 10s
-      retries: 5
   db:
     image: mysql:8.0.32
-    container_name: db
+    container_name: todo_db
     ports:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
-    healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-      timeout: 10s
-      retries: 5
-    cap_add:
-      - SYS_NICE

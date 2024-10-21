@@ -17,3 +17,5 @@ export interface ICreateUser {
   username: string,
   password: string,
 }
+
+export type ICreatedUser = Omit<IUser, 'password'>;
