@@ -16,7 +16,7 @@ exports.default = {
                 field: 'user_id',
             },
             description: {
-                type: sequelize_1.DataTypes.INTEGER,
+                type: sequelize_1.DataTypes.STRING,
                 allowNull: false,
             },
             isDone: {

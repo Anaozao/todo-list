@@ -23,6 +23,11 @@ exports.default = {
                 type: sequelize_1.DataTypes.STRING,
                 allowNull: false,
             },
+            isActive: {
+                type: sequelize_1.DataTypes.BOOLEAN,
+                allowNull: false,
+                field: 'is_active'
+            }
         });
     },
     down(queryInterface) {

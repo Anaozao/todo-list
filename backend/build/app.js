@@ -3,6 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = exports.App = void 0;
 const express = require("express");
 require("express-async-errors");
+const UserRouter_1 = require("./routers/UserRouter");
+const TaskRouter_1 = require("./routers/TaskRouter");
+const LoginRouter_1 = require("./routers/LoginRouter");
+const VerifyEmailRouter_1 = require("./routers/VerifyEmailRouter");
+const cors = require("cors");
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    optionSuccessStatus: 200
+};
 class App {
     constructor() {
         this.app = express();
@@ -16,8 +25,13 @@ class App {
             res.header('Access-Control-Allow-Headers', '*');
             next();
         };
+        this.app.use(cors(corsOptions));
         this.app.use(express.json());
         this.app.use(accessControl);
+        this.app.use('/users', UserRouter_1.default);
+        this.app.use('/tasks', TaskRouter_1.default);
+        this.app.use('/login', LoginRouter_1.default);
+        this.app.use('/verify-email', VerifyEmailRouter_1.default);
     }
     start(PORT) {
         this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));

@@ -23,6 +23,10 @@ SequelizeUser.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
+    isActive: {
+        type: sequelize_1.DataTypes.BOOLEAN,
+        allowNull: false,
+    }
 }, {
     sequelize: _1.default,
     modelName: 'users',

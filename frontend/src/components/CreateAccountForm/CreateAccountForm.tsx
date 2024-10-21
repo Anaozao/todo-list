@@ -15,6 +15,7 @@ function CreateAccountFrorm() {
     })
 
   const [errorMessage, setErrorMessage] = useState('')
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
@@ -40,8 +41,10 @@ function CreateAccountFrorm() {
 
   const handleCreate = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    setLoading(true)
     const {email, username, password } = formInfos
     const response = await fetchCreateAccount({email, password, username})
+    setLoading(false)
     if(response.message) {
       setErrorMessage(response.message)
       setTimeout(() => {
@@ -49,15 +52,18 @@ function CreateAccountFrorm() {
       }, 5000);
       return
     }
-    setErrorMessage('Conta criada com sucesso. Redirecionando para o Login')
+    setErrorMessage(`
+      Conta criada com sucesso. 
+      Verifique seu email e clique no link para autenticação! Redirecionando para o Login`)
     setTimeout(() => {
       setErrorMessage('')
       navigate('/login')
-    }, 3000)
+    }, 5000)
   }
 
   return (
     <form className={styles.form}>
+      {loading && <p>Carregando...</p>}
       <p
         className={errorMessage.includes('sucesso') ? styles.successMsg : styles.errorMsg}
       >

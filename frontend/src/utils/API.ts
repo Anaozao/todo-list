@@ -142,3 +142,19 @@ export const fetchUser = async (id: number, token: string) => {
     console.error(e)
   }
 }
+
+export const fetchAccountVerify = async (token: string) => {
+  try {
+    const response = await fetch(`${baseUrl}/verify-email?token=${token}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+      }
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}

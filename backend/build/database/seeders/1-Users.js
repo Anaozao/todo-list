@@ -5,9 +5,10 @@ exports.default = {
     up: async (queryInterface) => {
         await queryInterface.bulkInsert('users', [
             {
-                username: 'testUser1',
-                email: 'testUser1@email.com',
-                password: (0, bcryptjs_1.hashSync)('password', 10),
+                username: 'Túlio',
+                email: 'tulio@email.com',
+                password: (0, bcryptjs_1.hashSync)('senhaforte', 10),
+                is_active: true
             },
         ], {});
     },

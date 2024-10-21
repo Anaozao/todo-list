@@ -3,6 +3,7 @@ import 'express-async-errors';
 import UserRouter from './routers/UserRouter';
 import TaskRouter from './routers/TaskRouter';
 import LoginRouter from './routers/LoginRouter';
+import VerifyEmailRouter from './routers/VerifyEmailRouter'
 import * as cors from 'cors'
 
 const corsOptions = {
@@ -35,6 +36,7 @@ class App {
     this.app.use('/users', UserRouter);
     this.app.use('/tasks', TaskRouter);
     this.app.use('/login', LoginRouter);
+    this.app.use('/verify-email', VerifyEmailRouter)
   }
 
   public start(PORT: string | number): void {

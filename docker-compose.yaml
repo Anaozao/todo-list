@@ -33,8 +33,11 @@ services:
       - DB_PASS=123456
       - DB_HOST=db
       - DB_PORT=3306
+      - EMAIL_SERVICE=gmail
+      - ORIGIN_EMAIL=tutyparis2015@gmail.com
+      - EMAIL_PASS=jlwcuydpmajdkwmk
     healthcheck:
-      test: [ "CMD", "lsof", "-t", "-i:3001" ] 
+      test: [ "CMD", "lsof", "-t", "-i:3001" ]
       timeout: 10s
       retries: 5
   db:

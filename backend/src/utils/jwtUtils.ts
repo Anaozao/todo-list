@@ -13,7 +13,11 @@ export default class JwtUtils {
     this.secret = process.env.JWT_SECRET || 'password';
   }
 
-  createToken(payload: Payload) {
+  createToken(payload: Payload, expiresIn?: string) {
+    if (expiresIn) {
+      const token = jwt.sign(payload, this.secret, {expiresIn: expiresIn});
+      return token;
+    }
     const token = jwt.sign(payload, this.secret);
     return token;
   }

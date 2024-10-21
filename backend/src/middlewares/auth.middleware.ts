@@ -24,7 +24,6 @@ export default class Auth {
     }
     try {
       const token = this.authorization.split(' ')[1];
-      console.log(token);
       
       const user = this.jwt.validateToken(token);
 
