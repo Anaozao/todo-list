@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from './RecoveryForm.module.css'
+import { fetchRecoveryAccount } from "../../utils/API";
 
 function RecoveryForm() {
 
@@ -14,34 +15,34 @@ function RecoveryForm() {
     ))
   }
 
-  const handleRequest = async (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+  const handleSend = async (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const {email} = formInfos
+    const response = await fetchRecoveryAccount(email)
+    console.log(response)
   }
 
   return (
-    <form className={styles.form}>
-      <h2>Digite seu email</h2>
-      <div className={styles.inputsDiv}>
-        <label htmlFor="email"></label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          onChange={handleChange}
-          value={formInfos.email}
-          className={styles.inputs}
-        />
-      </div>
-
-      <div className={styles.buttonDiv}>
-        <button
-          className={styles.sendButton}
-          onClick={handleRequest}
-        >
-          Solicitar
-        </button>
-      </div>
-    </form>
+    <form>
+        <div>
+          <label htmlFor="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            onChange={handleChange}
+            value={formInfos.email}
+            className={styles.inputs}
+          />
+        </div>
+        <div>
+          <button
+            onClick={handleSend}
+          >
+            Confirmar
+          </button>
+        </div>
+      </form>
   )
 }
 

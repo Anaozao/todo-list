@@ -68,7 +68,7 @@ export default class CreateUser {
 
     const token = new JwtUtils().createToken(newUser, '');
 
-    const verificationLink = `${FRONT_BASE_URL}/verify-email?token=${token}`;
+    const verificationLink = `${FRONT_BASE_URL}/verificar-email?token=${token}`;
 
     transporter.sendMail(mailOptions(email, verificationLink))
       .then((mailInfo) => {

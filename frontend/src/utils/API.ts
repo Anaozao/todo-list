@@ -158,3 +158,22 @@ export const fetchAccountVerify = async (token: string) => {
     console.error(e)
   }
 }
+
+export const fetchRecoveryAccount = async (email: string) => {
+  try {
+    const response = await fetch(`${baseUrl}/recovery-account`, {
+      method: 'POST',
+      body: JSON.stringify({
+        email
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      }
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}

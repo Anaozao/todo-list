@@ -1,32 +1,30 @@
-import SequelizeUser from "../../database/models/SequelizeUser";
-import JWTUtils from '../../utils/jwtUtils'
+import SequelizeUser from '../../database/models/SequelizeUser';
+import JWTUtils from '../../utils/jwtUtils';
 
 export default class VerifyEmailService {
-  private model = SequelizeUser
+  private model = SequelizeUser;
 
   async verify(token: string) {
     try {
-      const decoded = new JWTUtils().validateToken(token)
-      const userId = decoded.id
-      
-      console.log(userId)
+      const decoded = new JWTUtils().validateToken(token);
+      const userId = decoded.id;
 
-      const user = await this.model.findByPk(userId)
-      
+      const user = await this.model.findByPk(userId);
+
       if (!user) {
-        return {status: 'NOT_FOUND', data: {message: 'Usuário não encontrado'}}
+        return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
       }
 
       const verifyUser = await this.model.update(
         { isActive: true },
-        { where: { id: userId }}
-      )
+        { where: { id: userId } },
+      );
 
-      console.log(verifyUser)
+      console.log(verifyUser);
 
-      return {status: 'SUCCESSFUL', data: {message: 'Conta verificada com sucesso!'}}
+      return { status: 'SUCCESSFUL', data: { message: 'Conta verificada com sucesso!' } };
     } catch (e) {
-      return {status: "INVALID_VALUE", data: {message: 'Token inválido ou expirado'}}
+      return { status: 'INVALID_VALUE', data: { message: 'Token inválido ou expirado' } };
     }
   }
 }

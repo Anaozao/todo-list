@@ -4,6 +4,7 @@ import CreateAccount from "./pages/CreateAccount/CreateAccount";
 import Home from "./pages/Home/Home";
 import Layout from "./components/Layout/Layout";
 import AccountAuthentication from "./pages/AccountAuthentication/AccountAuthentication";
+import AccountRecovery from "./pages/AccauntRecovery/AccountRecovery";
 
 function App() {
 
@@ -13,8 +14,9 @@ function App() {
         <Route index element={<Home />}/>
       </Route>
       <Route path="/login" element={<Login />}/>
-      <Route path="criar-conta" element={<CreateAccount />}/>
-      <Route path="verify-email" element={<AccountAuthentication />}/>
+      <Route path="/criar-conta" element={<CreateAccount />}/>
+      <Route path="/verificar-email" element={<AccountAuthentication />}/>
+      <Route path="/recuperar-conta" element={<AccountRecovery />}/>
     </Routes>
   )
 }
