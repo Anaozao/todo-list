@@ -22,4 +22,11 @@ export default class UserController {
     const { status, data } = await this.userService.createUser({ email, username, password });
     res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
   }
+
+  async changePassword(req: Request, res: Response) {
+    const { email, token } = req.body;
+
+    const { status, data } = await this.userService.changePassword(email, token);
+    res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
+  }
 }

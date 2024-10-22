@@ -18,5 +18,9 @@ router.post(
   '/',
   (req: Request, res: Response) => new UserControler().createUser(req, res),
 );
+router.post(
+  '/change-password',
+  (req: Request, res: Response) => new UserControler().changePassword(req, res),
+);
 
 export default router;

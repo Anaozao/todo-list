@@ -1,9 +1,11 @@
 import { ICreateUser } from '../../interfaces/IUser';
+import ChangePassword from './ChangePassword';
 import CreateUser from './CreateUser';
 import GetUser from './GetUser';
 
 export default class UserService {
   private create = new CreateUser();
+  private changePass = new ChangePassword();
   private get = new GetUser();
 
   async getById(id: number) {
@@ -20,6 +22,12 @@ export default class UserService {
 
   async createUser(userData: ICreateUser) {
     const { status, data } = await this.create.createUser(userData);
+
+    return { status, data };
+  }
+
+  async changePassword(password: string, token: string) {
+    const { status, data } = await this.changePass.change(password, token);
 
     return { status, data };
   }

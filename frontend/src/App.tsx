@@ -17,6 +17,7 @@ function App() {
       <Route path="/criar-conta" element={<CreateAccount />}/>
       <Route path="/verificar-email" element={<AccountAuthentication />}/>
       <Route path="/recuperar-conta" element={<AccountRecovery />}/>
+      
     </Routes>
   )
 }
