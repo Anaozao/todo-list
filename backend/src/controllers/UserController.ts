@@ -24,9 +24,9 @@ export default class UserController {
   }
 
   async changePassword(req: Request, res: Response) {
-    const { email, token } = req.body;
+    const { password, token } = req.body;
 
-    const { status, data } = await this.userService.changePassword(email, token);
+    const { status, data } = await this.userService.changePassword({ password, token });
     res.status(mapStatusHTTP(status as keyof typeof http)).json(data);
   }
 }

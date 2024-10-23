@@ -22,7 +22,7 @@ export default class JwtUtils {
     return token;
   }
 
-  validateToken(token: string): Payload {
+  validateToken(token: string) {
     const payload = jwt.verify(token, this.secret) as Payload;
     return payload;
   }

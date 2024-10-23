@@ -1,5 +1,5 @@
 import { ICreateUser } from '../../interfaces/IUser';
-import ChangePassword from './ChangePassword';
+import ChangePassword, { ChangePasswordType } from './ChangePassword';
 import CreateUser from './CreateUser';
 import GetUser from './GetUser';
 
@@ -26,8 +26,8 @@ export default class UserService {
     return { status, data };
   }
 
-  async changePassword(password: string, token: string) {
-    const { status, data } = await this.changePass.change(password, token);
+  async changePassword({ password, token }: ChangePasswordType) {
+    const { status, data } = await this.changePass.change({ password, token });
 
     return { status, data };
   }

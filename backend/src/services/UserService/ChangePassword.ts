@@ -2,21 +2,28 @@ import { hash } from 'bcryptjs';
 import SequelizeUser from '../../database/models/SequelizeUser';
 import JWTUtils from '../../utils/jwtUtils';
 
+export type ChangePasswordType = {
+  password: string,
+  token: string
+};
 export default class ChangePassword {
   private model = SequelizeUser;
 
-  async change(password: string, token: string) {
+  async change({ password, token }: ChangePasswordType) {
     const decoded = new JWTUtils().validateToken(token);
     const { email } = decoded;
+    console.log(decoded);
 
     const user = await this.model.findOne({ where: { email } });
+    console.log(user);
 
     if (!user) {
       return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
     }
 
     const hashPass = await hash(password, 10);
-    await this.model.update({ password: hashPass }, { where: { email } });
-    return { status: 'SUCCESSFUL', daa: { message: 'Senha alterada com sucesso' } };
+    await this.model
+      .update({ password: hashPass }, { where: { email } });
+    return { status: 'SUCCESSFUL', data: { message: 'Senha alterada com sucesso' } };
   }
 }

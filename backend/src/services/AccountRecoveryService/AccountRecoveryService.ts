@@ -26,7 +26,7 @@ export default class AccountRecoveryService {
     if (!emailExists) {
       return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
     }
-    const token = new JwtUtils().createToken(email as unknown as Payload, '');
+    const token = new JwtUtils().createToken({ email } as Payload, '1d');
     const verificationLink = `${FRONT_BASE_URL}/redefinir-senha?token=${token}`;
     try {
       const mailInfo = await transporter.sendMail(mailOptions(email, verificationLink));
