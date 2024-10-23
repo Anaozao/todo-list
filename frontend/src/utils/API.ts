@@ -177,3 +177,23 @@ export const fetchRecoveryAccount = async (email: string) => {
     console.error(e)
   }
 }
+
+export const fetchChangePassword = async (password: string, token: string) => {
+  try {
+    const response = await fetch(`${baseUrl}/users/change-password`, {
+      method: 'POST',
+      body: JSON.stringify({
+        password,
+        token
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      }
+    })
+    const data = response.json();
+    
+    return data
+  }catch (e) {
+    console.error(e)
+  }
+}

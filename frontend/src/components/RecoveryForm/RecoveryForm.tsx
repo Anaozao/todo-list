@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styles from './RecoveryForm.module.css'
 import { fetchRecoveryAccount } from "../../utils/API";
 import { useNavigate } from "react-router-dom";
+import ReactLoading from 'react-loading';
 
 function RecoveryForm() {
 
   const [formInfos, setFormInfos] = useState({email: ''})
   const [showMessage, setShowMessage] = useState(false)
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +23,9 @@ function RecoveryForm() {
   const handleSend = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const {email} = formInfos
+    setLoading(true)
     await fetchRecoveryAccount(email)
+    setLoading(false)
     setShowMessage(true)
     setTimeout(() => {
       setShowMessage(false)
@@ -32,7 +36,8 @@ function RecoveryForm() {
 
   return (
     <form className={styles.form}>
-      {showMessage && <p className={styles.message}>Link para alteração de senha enviado ao seu e-mail</p>}
+      {loading && <ReactLoading color="black" type="bubbles" className={styles.loading}/>}
+      {showMessage && <p className={styles.message}>Link para alteração de senha enviado ao seu e-mail. Redirecionando para o login</p>}
       <p className={styles.title}>Digite seu email</p>
       <div className={styles.inputDiv}>
         <label htmlFor="email"></label>

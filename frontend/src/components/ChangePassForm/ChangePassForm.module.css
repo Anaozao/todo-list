@@ -1,0 +1,63 @@
+.form {
+  align-items: center;
+  background-color: rgb(255, 245, 157);
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 320px;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  width: 50%;
+}
+
+.inputDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  font-size: 16px;
+  height: 30px;
+  width: 200px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button {
+  align-self: center;
+  background-color: rgb(194, 37, 37);
+  border: 0.5px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  height: 25px;
+  width: 100px;
+
+  &:active {
+    background-color: rgb(150, 31, 31);
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 2px;
+}
+
+.message {
+  position: absolute;
+  top: 2px;
+}

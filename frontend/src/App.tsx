@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Layout from "./components/Layout/Layout";
 import AccountAuthentication from "./pages/AccountAuthentication/AccountAuthentication";
 import AccountRecovery from "./pages/AccauntRecovery/AccountRecovery";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       <Route path="/criar-conta" element={<CreateAccount />}/>
       <Route path="/verificar-email" element={<AccountAuthentication />}/>
       <Route path="/recuperar-conta" element={<AccountRecovery />}/>
-      
+      <Route path="/redefinir-senha" element={<ChangePassword />}/>
     </Routes>
   )
 }
