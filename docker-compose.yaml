@@ -4,7 +4,7 @@ services:
     container_name: todo_frontend
     build: ./frontend
     ports:
-      - 3000:3000
+      - 5173:5173
     working_dir: /app-frontend
     env_file:
       - ./frontend/.env

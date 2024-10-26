@@ -9,6 +9,6 @@ RUN npm install
 # Copia o restante dos arquivos da aplicação para o container
 COPY . .
 # A aplicação expõe a porta 3001
-EXPOSE 3000
+EXPOSE 5173
 # Configura os comandos para iniciar a aplicação
 CMD ["npm", "run", "dev"]
