@@ -1,9 +1,7 @@
 .form {
   align-items: center;
-  background-color: rgb(255, 245, 157);
-  border: 1px solid black;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px black;
+  background: none;
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -15,11 +13,11 @@
 }
 
 .title {
-  font-size: 16px;  
+  font-size: 18px;
 }
 
 .inputs {
-  background-color: rgb(255, 245, 157);
+  background: none;
   border: none;
   border-bottom: 1px solid black;
   font-size: 16px;
@@ -28,30 +26,38 @@
   width: 220px;
   text-align: center;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-.sendBtn {
-  background-color: rgb(194, 37, 37);
+.buttonDiv {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons {
+  background: linear-gradient(to bottom, rgb(87, 0, 250), rgb(138, 75, 255));
+  color: white;
   border: 0.5px solid black;
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  height: 25px;
-  width: 100px;
+  height: 35px;
+  width: 150px;
 
   &:active {
-    background-color: rgb(150, 31, 31);
+    &:active {
+      background: linear-gradient(to bottom, rgb(128, 59, 255), rgb(169, 123, 255));
+    }
   }
 }
 
 .message {
-position: absolute;
-top: 2px;
+  position: absolute;
+  top: 2px;
 }
 
 .loading {

@@ -4,6 +4,7 @@ import { fetchCreateAccount } from "../../utils/API";
 import { useNavigate } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import ReactLoading from "react-loading";
 
 function CreateAccountFrorm() {
   const [formInfos, setFormInfos] = useState(
@@ -63,7 +64,7 @@ function CreateAccountFrorm() {
 
   return (
     <form className={styles.form}>
-      {loading && <p>Carregando...</p>}
+      {loading && <ReactLoading type="bubbles" color="black" className={styles.loading}/>}
       <p
         className={errorMessage.includes('sucesso') ? styles.successMsg : styles.errorMsg}
       >

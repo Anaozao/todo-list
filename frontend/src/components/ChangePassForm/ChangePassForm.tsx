@@ -65,7 +65,7 @@ function ChangePassForm() {
   return (
     <form className={styles.form}>
       {loading && <ReactLoading color='black' type='bubbles' className={styles.loading}/>}
-      <p className={styles.message}>{message}</p>
+      {!loading && <p className={styles.message}>{message}</p>}
       <h1 className={styles.title}>Digite abaixo sua nova senha</h1>
       <div className={styles.inputDiv}>
         <label htmlFor="password">Nova Senha</label>

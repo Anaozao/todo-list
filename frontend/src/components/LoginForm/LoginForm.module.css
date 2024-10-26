@@ -1,20 +1,19 @@
 .form {
   align-items: center;
-  background-color: snow;
-  border: none;
-  border-radius: 10px;
+  /* background-color: rgb(181, 240, 255);
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  border-radius: 10px; */
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
   height: 400px;
   position: fixed;
-  top: 50px;
+  top: 25%;
   width: 400px;
 }
 
 .errorMsg {
-  background-color: rgba(255, 0, 0, 0.89);
   border: none;
   border-radius: 3px;
   font-size: 20px;
@@ -30,30 +29,41 @@
 .title {
   display: flex;
   align-items: center;
+  font-size: 40px;
 }
 
 .inputs {
-  border: 1px solid black;
-  border-radius: 5px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
   font-size: 18px;
   height: 40px;
   padding-left: 5px;
   width: 250px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: black;
+  }
 }
 
 .loginBtn {
-  background-color: rgb(194, 37, 37);
+  background: linear-gradient(to bottom, rgb(87, 0, 250), rgb(138, 75, 255));
+  color: white;
   border: 0.5px solid black;
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   height: 40px;
   width: 250px;
 
   &:active {
-    background-color: rgb(150, 31, 31);
+    background: linear-gradient(to bottom, rgb(128, 59, 255), rgb(169, 123, 255));
   }
 }
 
@@ -62,9 +72,21 @@
   gap: 10px;
 }
 
+.links {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.loading {
+  position: absolute;
+  top: 10px;
+}
+
 @media (max-width: 600px) {
   .form {
-    height: 300px;
+    height: 400px;
     width: 80%;
   }
 

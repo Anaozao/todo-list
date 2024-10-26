@@ -1,5 +1,6 @@
 .header {
   align-items: center;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 212, 212));
   border-bottom: 1px solid black;
   justify-content: space-evenly;
   display: flex;

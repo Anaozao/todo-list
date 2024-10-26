@@ -1,6 +1,7 @@
 .loginPage {
-  /* align-items: center; */
-  background-color: rgb(82, 82, 82);
+  background: linear-gradient(to bottom, #ff9a5f, #7371eb);
+  /* Gradiente linear de laranja para rosa */
+  background-position: 0% 40%;
   display: flex;
   justify-content: center;
   height: 100%;

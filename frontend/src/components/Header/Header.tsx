@@ -31,7 +31,7 @@ function Header() {
       className={styles.header}
     >
       <div></div>
-      <h1 className={styles.title}>Bem vindo {username}</h1>
+      <h1 className={styles.title}>Bem vindo(a) {username}</h1>
       <div className={styles.buttonsDiv}>
         <button
           onClick={handleLogout}

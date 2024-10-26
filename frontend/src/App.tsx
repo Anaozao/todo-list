@@ -4,7 +4,7 @@ import CreateAccount from "./pages/CreateAccount/CreateAccount";
 import Home from "./pages/Home/Home";
 import Layout from "./components/Layout/Layout";
 import AccountAuthentication from "./pages/AccountAuthentication/AccountAuthentication";
-import AccountRecovery from "./pages/AccauntRecovery/AccountRecovery";
+import AccountRecovery from "./pages/AccountRecovery/AccountRecovery";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 
 function App() {

@@ -4,10 +4,12 @@ import { GiNotebook } from "react-icons/gi";
 import styles from './LoginForm.module.css'
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import ReactLoading from "react-loading";
 
 function LoginForm() {
   const [formInfos, setFormInfos] = useState({email: '', password: ''})
   const [errorMessage, setErrorMessage] = useState('')
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const { setItem } = useLocalStorage()
 
@@ -23,16 +25,18 @@ function LoginForm() {
   const handleLogin = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const {email, password} = formInfos
-    
+    setLoading(true)
     const response = await fetchLogin(email, password)
     if (response.message) {
       setErrorMessage(response.message)
+      setLoading(false)
       setTimeout(() => {
         setErrorMessage('')
       }, 5000);
       return;
     }
     setItem('token', response.token)
+    setLoading(false)
     navigate('/')
   }
 
@@ -44,6 +48,7 @@ function LoginForm() {
         To Do List
         </h1>
       { errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
+      { loading && <ReactLoading type="bubbles" color="black" className={styles.loading}/>}
       <div className={styles.inputsDivs}>
         <label htmlFor="email"></label>
         <input
@@ -78,8 +83,8 @@ function LoginForm() {
         </button>
       </div>
       <div className={styles.linksDiv}>
-        <Link to={'/criar-conta'}>Criar uma conta</Link>
-        <Link to={'/recuperar-conta'}>Esqueci minha senha</Link>
+        <Link className={styles.links} to={'/criar-conta'}>Criar uma conta</Link>
+        <Link className={styles.links} to={'/recuperar-conta'}>Esqueci minha senha</Link>
       </div>
     </form>
   )

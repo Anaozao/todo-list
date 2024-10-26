@@ -1,6 +1,6 @@
 .taskCard {
   align-items: center;
-  background-color: rgb(209, 233, 255);
+  background-color: rgb(255, 214, 152);
   border: 2px solid rgba(70, 70, 70, 0.596);
   border-radius: 5px;
   justify-content: space-between;
@@ -86,9 +86,10 @@
 }
 
 .buttons {
-  background-color: brown;
+  background: linear-gradient(to bottom, rgb(87, 0, 250), rgb(138, 75, 255));
   border: 0.5px solid grey;
   border-radius: 5px;
+  color: white;
   cursor: pointer;
   font-size: 17px;
   font-weight: 700;
@@ -96,7 +97,7 @@
   width: 50%;
 
   &:active {
-    background-color: rgba(165, 42, 42, 0.664);
+    background: linear-gradient(to bottom, rgb(87, 0, 250, 0.6), rgb(138, 75, 255, 0.6));
   }
 }
 

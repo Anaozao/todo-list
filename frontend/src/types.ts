@@ -23,7 +23,8 @@ export type ReduxState = {
   tasks: {
     allTasks: TaskType[],
     deletTask: number
-  }
+  },
+  loading: boolean
 }
 
 export type TaskType = {

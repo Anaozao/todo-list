@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 import { useDispatch } from 'react-redux'
 import { TaskType, UserFromDecodedToken } from '../../types'
@@ -8,6 +8,7 @@ import TasksSection from '../../components/TasksSection/TasksSection'
 import { fetchGetTasks } from '../../utils/API'
 import { setTasks } from '../../redux/reducers/tasksSlice'
 import CreateTaskForm from '../../components/CreateTaskForm/CreateTaskForm'
+import { setLoading } from '../../redux/reducers/loadingSlice'
 
 
 function Home() {
@@ -18,7 +19,9 @@ function Home() {
   useEffect(() => {
     const decodedToken: UserFromDecodedToken = jwtDecode(token)
     const getTasks = async () => {
+      dispatch(setLoading(true))
       const response: TaskType[] = await fetchGetTasks(decodedToken.id, token)
+      dispatch(setLoading(false))
       dispatch(setTasks(response))
     }
     getTasks()

@@ -1,6 +1,6 @@
 .taskForm {
   align-items: center;
-  background-color: rgb(233, 182, 16);
+  background-color: rgb(253, 203, 203);
   border: 1px solid grey;
   border-radius: 5px;
   display: flex;
@@ -41,17 +41,19 @@
 }
 
 .addButton {
-  background-color: brown;
-  border: 0.5px solid grey;
+  background: linear-gradient(to bottom, rgb(87, 0, 250), rgb(138, 75, 255));
+  color: white;
+  border: 0.5px solid black;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   height: 30px;
-  width: 30%;
+  width: 250px;
 
   &:active {
-    background-color: rgba(165, 42, 42, 0.664);
+    background: linear-gradient(to bottom, rgb(87, 0, 250, 0.6), rgb(138, 75, 255, 0.6));
   }
 }
 
