@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styles from './Home.module.css'
 import { useDispatch } from 'react-redux'
 import { TaskType, UserFromDecodedToken } from '../../types'

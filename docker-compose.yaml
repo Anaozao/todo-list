@@ -6,9 +6,8 @@ services:
     ports:
       - 3000:3000
     working_dir: /app-frontend
-    environment:
-      - VITE_PORT=5173
-      - VITE_BACK_URL=http://localhost/3001
+    env_file:
+      - ./frontend/.env
     depends_on:
       - backend
   backend:
@@ -22,22 +21,13 @@ services:
     depends_on:
       - db
 
-    environment:
-      - APP_PORT=3001
-      - JWT_SECRET=jwt_secret
-      - DB_USER=root
-      - DB_PASS=123456
-      - DB_HOST=db
-      - DB_PORT=3306
-      - FRONT_BASE_URL=http://localhost:5173
-      - EMAIL_SERVICE=gmail
-      - ORIGIN_EMAIL=tutyparis2015@gmail.com
-      - EMAIL_PASS=jlwcuydpmajdkwmk
+    env_file:
+      - ./backend/.env
   db:
     image: mysql:8.0.32
     container_name: todo_db
     ports:
       - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
+    env_file:
+      - .env
     restart: 'always'

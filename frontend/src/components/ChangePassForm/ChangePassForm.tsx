@@ -59,6 +59,7 @@ function ChangePassForm() {
       navigate('/login')
     }, 3000)
     setFormInfos({password: '', confirmPassword: ''})
+    localStorage.clear()
   }
 
   return (

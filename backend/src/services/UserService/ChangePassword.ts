@@ -12,10 +12,8 @@ export default class ChangePassword {
   async change({ password, token }: ChangePasswordType) {
     const decoded = new JWTUtils().validateToken(token);
     const { email } = decoded;
-    console.log(decoded);
 
     const user = await this.model.findOne({ where: { email } });
-    console.log(user);
 
     if (!user) {
       return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };

@@ -24,7 +24,9 @@ export type ReduxState = {
     allTasks: TaskType[],
     deletTask: number
   },
-  loading: boolean
+  loading: {
+    isLoading: boolean
+  }
 }
 
 export type TaskType = {
