@@ -1,7 +1,9 @@
 Este projeto se trata de uma "lista de tarefas".
 
 Front-End feito em React.js + Vite
+
 Back-End Feito em TypeScript, utilizando o Node.js + Express para criação da API e seus endpoints.
+
 Para o Banco de dados foi utilizado o MySQL + Sequelize.
 
 Para utilizar o projeto localmente:
