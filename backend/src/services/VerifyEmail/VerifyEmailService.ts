@@ -15,12 +15,10 @@ export default class VerifyEmailService {
         return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
       }
 
-      const verifyUser = await this.model.update(
+      await this.model.update(
         { isActive: true },
         { where: { id: userId } },
       );
-
-      console.log(verifyUser);
 
       return { status: 'SUCCESSFUL', data: { message: 'Conta verificada com sucesso!' } };
     } catch (e) {

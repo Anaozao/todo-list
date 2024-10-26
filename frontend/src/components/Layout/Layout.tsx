@@ -19,6 +19,7 @@ function Layout() {
     const getUser = async () => {
       const {id}: UserFromDecodedToken = jwtDecode(token)
       const response = await fetchUser(id, token)
+      console.log(response)
       if (response.message) {
         setIsValidUser(false)
         setTimeout(() => {
@@ -38,7 +39,7 @@ function Layout() {
       getUser()
       return
     }
-  }, [isValidUser])
+  }, [token])
 
   if (!token || token.length < 1 ) {
     return <AccessDenied />

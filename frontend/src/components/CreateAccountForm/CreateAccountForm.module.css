@@ -46,6 +46,10 @@
   &::placeholder {
     color: black;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .buttonsDiv {

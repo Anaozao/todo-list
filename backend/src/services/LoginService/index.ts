@@ -20,8 +20,6 @@ export default class LoginService {
       return { status: 'UNAUTHORIZED', data: { message: 'Usuário ou senha inválidos' } };
     }
 
-    console.log(user)
-
     if (!user.isActive) {
       return {
         status: "UNAUTHORIZED",

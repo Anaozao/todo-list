@@ -48,18 +48,19 @@ function ChangePassForm() {
     setLoading(false)
     if (response.message !== 'Senha alterada com sucesso') {
       setMessage('Falha ao redefinir senha, tente mais tarde') 
-      setInterval(() => {
+      setTimeout(() => {
         setMessage('')
         navigate('/login')
       }, 3000)
       return
     }
     setMessage('Senha redefinida com sucesso. Redirecionando ao login')
-    setInterval(() => {
+    setTimeout(() => {
       navigate('/login')
     }, 3000)
     setFormInfos({password: '', confirmPassword: ''})
     localStorage.clear()
+    return
   }
 
   return (
