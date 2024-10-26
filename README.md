@@ -6,6 +6,10 @@ Back-End Feito em TypeScript, utilizando o Node.js + Express para criação da A
 
 Para o Banco de dados foi utilizado o MySQL + Sequelize.
 
+Para criação e validação de tokens foi utilizado o JSON Web Token
+
+Para envio de email foi utilizado o Nodemailer
+
 Para utilizar o projeto localmente:
 
 - Faça o clone do repositório na sua máquina
