@@ -59,14 +59,13 @@ function ChangePassForm() {
       navigate('/login')
     }, 3000)
     setFormInfos({password: '', confirmPassword: ''})
-    console.log(message)
   }
 
   return (
     <form className={styles.form}>
       {loading && <ReactLoading color='black' type='bubbles' className={styles.loading}/>}
       {!loading && <p className={styles.message}>{message}</p>}
-      <h1 className={styles.title}>Digite abaixo sua nova senha</h1>
+      <h1 className={styles.title}>Digite sua nova senha</h1>
       <div className={styles.inputDiv}>
         <label htmlFor="password">Nova Senha</label>
         <input

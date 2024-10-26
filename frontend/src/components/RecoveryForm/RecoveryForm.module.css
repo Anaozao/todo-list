@@ -56,11 +56,26 @@
 }
 
 .message {
+  font-size: 17px;
   position: absolute;
+  text-align: center;
   top: 2px;
 }
 
 .loading {
   position: absolute;
   top: 2px;
+}
+
+@media (max-width: 600px) {
+  .form {
+    height: 300px;
+    width: 90%;
+  }
+
+  .buttons {
+    font-size: 19px;
+    height: 30px;
+    width: 100px;
+  }
 }

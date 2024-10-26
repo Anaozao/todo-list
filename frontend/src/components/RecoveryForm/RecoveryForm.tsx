@@ -37,7 +37,7 @@ function RecoveryForm() {
     setLoading(true)
     await fetchRecoveryAccount(email)
     setLoading(false)
-    setMessage('Link para alteração de senha enviado ao seu e-mail. Redirecionando para o login')
+    setMessage('Link para alteração de senha enviado ao seu e-mail. Redirecionando para o login.')
     setShowMessage(true)
     setTimeout(() => {
       setMessage('')

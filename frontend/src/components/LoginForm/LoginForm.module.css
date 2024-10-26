@@ -86,7 +86,9 @@
 
 @media (max-width: 600px) {
   .form {
+    position: absolute;
     height: 400px;
+    top: 100px;
     width: 80%;
   }
 
