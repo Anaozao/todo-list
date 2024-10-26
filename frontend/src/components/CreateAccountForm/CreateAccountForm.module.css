@@ -1,13 +1,9 @@
 .form {
   align-items: center;
-  /* background-color: rgb(214, 214, 214); */
-  /* border: 0.5px solid grey; */
-  /* border-radius: 10px; */
   display: flex;
   flex-direction: column;
   gap: 50px;
   justify-content: center;
-  position: relative;
   height: 80%;
   width: 400px;
 }
@@ -18,7 +14,6 @@
 }
 
 .errorMsg {
-  background-color: rgba(255, 0, 0, 0.897);
   border: none;
   border-radius: 3px;
   font-size: 18px;
@@ -30,7 +25,6 @@
 }
 
 .successMsg {
-  background-color: rgba(0, 194, 0, 0.925);
   font-size: 18px;
   font-weight: 700;
   padding: 0 5px 0 5px;
@@ -95,7 +89,11 @@
   }
 
   .inputs {
-    height: 35px;
+    height: 25px;
+  }
+
+  .buttons {
+    width: 150px;
   }
 
 }

@@ -14,9 +14,7 @@ function AccountAuthentication() {
       const response = await fetchAccountVerify(token!)
       if(response.message) {
         alert("Conta verificada com sucesso")
-        setTimeout(() => {
-          navigate('/login')
-        }, 3000)
+        navigate('/login')
         return
       } else {
         alert('Erro ao confirmar conta.')

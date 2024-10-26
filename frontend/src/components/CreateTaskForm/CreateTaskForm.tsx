@@ -52,6 +52,7 @@ function CreateTaskForm() {
           onChange={(e) => setDescription(e.target.value)}
           placeholder='Novo item...'
           className={styles.inputs}
+          maxLength={150}
         />
       </div>
       <div className={styles.buttonDiv}>

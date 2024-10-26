@@ -1,12 +1,12 @@
 .taskCard {
   align-items: center;
-  background-color: rgb(255, 214, 152);
-  border: 2px solid rgba(70, 70, 70, 0.596);
-  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 1px solid black;
   justify-content: space-between;
   display: flex;
   gap: 10px;
-  padding: 0 5px 0 5px;
+  padding: 10px 10px;
   width: 80%;
 }
 
@@ -16,7 +16,7 @@
   font-size: 18px;
   flex-grow: 1;
   gap: 3px;
-  max-width: 80%;
+  width: 80%;
 }
 
 .description {
@@ -103,6 +103,6 @@
 
 @media (max-width: 600px) {
   .taskCard {
-    width: 90%;
+    width: 98%;
   }
 }

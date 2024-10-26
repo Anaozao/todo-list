@@ -6,8 +6,9 @@
   gap: 20px;
   flex-grow: 1;
   padding: 20px 0;
-  overflow: auto;
+  overflow: overlay;
   width: 100%;
+  max-width: 100%;
 }
 
 .tasksSection::-webkit-scrollbar {
@@ -33,7 +34,7 @@
 }
 
 @media (max-width: 600px) {
-  /* .tasksSection {
-    
-  } */
+  .tasksSection {
+    width: 100%;
+  }
 }
