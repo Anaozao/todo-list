@@ -1,7 +1,7 @@
 import { CreateAccountData, CreateTask, UpdateTask } from "../types";
 
-const baseUrl = process.env.BACK_URL
-const protocol = process.env.URL_PROTOCOL
+const baseUrl = import.meta.env.BACK_URL
+const protocol = import.meta.env.URL_PROTOCOL
 
 export const fetchLogin = async (email: string, password: string) => {
   try {
