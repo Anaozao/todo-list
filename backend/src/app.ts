@@ -7,8 +7,10 @@ import LoginRouter from './routers/LoginRouter';
 import VerifyEmailRouter from './routers/VerifyEmailRouter';
 import AccountRecoveryController from './routers/AccountRecoveryRouter';
 
+const frontUrl = process.env.FRONT_BASE_URL
+
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: frontUrl,
   optionSuccessStatus: 200,
 };
 
