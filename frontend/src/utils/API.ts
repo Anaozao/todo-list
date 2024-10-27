@@ -22,7 +22,6 @@ export const fetchLogin = async (email: string, password: string) => {
 }
 
 export const fetchCreateAccount = async ({email, password, username}: CreateAccountData) => {
-  
   try {
     const response = await fetch(`${protocol}://${baseUrl}/users`, {
       method: 'POST',
