@@ -5,7 +5,7 @@ import UserRouter from './routers/UserRouter';
 import TaskRouter from './routers/TaskRouter';
 import LoginRouter from './routers/LoginRouter';
 import VerifyEmailRouter from './routers/VerifyEmailRouter';
-import AccountRecoveryController from './routers/AccountRecoveryRouter';
+import AccountRecoveryRouter from './routers/AccountRecoveryRouter';
 
 const frontUrl = process.env.FRONT_BASE_URL
 
@@ -40,7 +40,7 @@ class App {
     this.app.use('/tasks', TaskRouter);
     this.app.use('/login', LoginRouter);
     this.app.use('/verify-email', VerifyEmailRouter);
-    this.app.use('/recovery-account', AccountRecoveryController);
+    this.app.use('/recovery-account', AccountRecoveryRouter);
   }
 
   public start(PORT: string | number): void {
@@ -50,5 +50,4 @@ class App {
 
 export { App };
 
-// Essa segunda exportação é estratégica, e a execução dos testes de cobertura depende dela
 export const { app } = new App();
