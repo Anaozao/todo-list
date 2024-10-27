@@ -7,7 +7,7 @@ class JwtUtils {
     }
     createToken(payload, expiresIn) {
         if (expiresIn) {
-            const token = jwt.sign(payload, this.secret, { expiresIn: expiresIn });
+            const token = jwt.sign(payload, this.secret, { expiresIn });
             return token;
         }
         const token = jwt.sign(payload, this.secret);

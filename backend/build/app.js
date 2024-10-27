@@ -3,14 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = exports.App = void 0;
 const express = require("express");
 require("express-async-errors");
+const cors = require("cors");
 const UserRouter_1 = require("./routers/UserRouter");
 const TaskRouter_1 = require("./routers/TaskRouter");
 const LoginRouter_1 = require("./routers/LoginRouter");
 const VerifyEmailRouter_1 = require("./routers/VerifyEmailRouter");
-const cors = require("cors");
+const AccountRecoveryRouter_1 = require("./routers/AccountRecoveryRouter");
+const frontUrl = process.env.FRONT_BASE_URL;
 const corsOptions = {
-    origin: 'http://localhost:5173',
-    optionSuccessStatus: 200
+    origin: frontUrl,
+    optionSuccessStatus: 200,
 };
 class App {
     constructor() {
@@ -32,6 +34,7 @@ class App {
         this.app.use('/tasks', TaskRouter_1.default);
         this.app.use('/login', LoginRouter_1.default);
         this.app.use('/verify-email', VerifyEmailRouter_1.default);
+        this.app.use('/recovery-account', AccountRecoveryRouter_1.default);
     }
     start(PORT) {
         this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));

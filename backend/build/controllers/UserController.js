@@ -20,6 +20,11 @@ class UserController {
         const { status, data } = await this.userService.createUser({ email, username, password });
         res.status((0, mapStatusHTTP_1.mapStatusHTTP)(status)).json(data);
     }
+    async changePassword(req, res) {
+        const { password, token } = req.body;
+        const { status, data } = await this.userService.changePassword({ password, token });
+        res.status((0, mapStatusHTTP_1.mapStatusHTTP)(status)).json(data);
+    }
 }
 exports.default = UserController;
 //# sourceMappingURL=UserController.js.map

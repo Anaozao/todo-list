@@ -19,7 +19,6 @@ class LoginService {
         if (!user || !(0, bcryptjs_1.compareSync)(password, user.password)) {
             return { status: 'UNAUTHORIZED', data: { message: 'Usuário ou senha inválidos' } };
         }
-        console.log(user);
         if (!user.isActive) {
             return {
                 status: "UNAUTHORIZED",

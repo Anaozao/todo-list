@@ -10,17 +10,15 @@ class VerifyEmailService {
         try {
             const decoded = new jwtUtils_1.default().validateToken(token);
             const userId = decoded.id;
-            console.log(userId);
             const user = await this.model.findByPk(userId);
             if (!user) {
                 return { status: 'NOT_FOUND', data: { message: 'Usuário não encontrado' } };
             }
-            const verifyUser = await this.model.update({ isActive: true }, { where: { id: userId } });
-            console.log(verifyUser);
+            await this.model.update({ isActive: true }, { where: { id: userId } });
             return { status: 'SUCCESSFUL', data: { message: 'Conta verificada com sucesso!' } };
         }
         catch (e) {
-            return { status: "INVALID_VALUE", data: { message: 'Token inválido ou expirado' } };
+            return { status: 'INVALID_VALUE', data: { message: 'Token inválido ou expirado' } };
         }
     }
 }
