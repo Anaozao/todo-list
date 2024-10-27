@@ -1,10 +1,11 @@
 import { CreateAccountData, CreateTask, UpdateTask } from "../types";
 
-const baseUrl = import.meta.env.VITE_BACK_URL
+const baseUrl = process.env.BACK_URL
+const protocol = process.env.URL_PROTOCOL
 
 export const fetchLogin = async (email: string, password: string) => {
   try {
-    const response = await fetch(`${baseUrl}/login`, {
+    const response = await fetch(`${protocol}${baseUrl}/login`, {
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -23,7 +24,7 @@ export const fetchLogin = async (email: string, password: string) => {
 export const fetchCreateAccount = async ({email, password, username}: CreateAccountData) => {
   
   try {
-    const response = await fetch(`${baseUrl}/users`, {
+    const response = await fetch(`${protocol}${baseUrl}/users`, {
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -43,7 +44,7 @@ export const fetchCreateAccount = async ({email, password, username}: CreateAcco
 export const fetchGetTasks = async (userId: number, token: string) => {
   
   try {
-    const response = await fetch(`${baseUrl}/tasks/user/${userId}`, {
+    const response = await fetch(`${protocol}${baseUrl}/tasks/user/${userId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -62,7 +63,7 @@ export const fetchGetTasks = async (userId: number, token: string) => {
 export const fetchCreateTask = async ({userId, description}: CreateTask, token: string) => {
   
   try {
-    const response = await fetch(`${baseUrl}/tasks`, {
+    const response = await fetch(`${protocol}${baseUrl}/tasks`, {
       method: 'POST',
       body: JSON.stringify({
         userId,
@@ -85,7 +86,7 @@ export const fetchCreateTask = async ({userId, description}: CreateTask, token: 
 export const fetchUpdataTask = async ({id, isDone}: UpdateTask, token: string) => {
   
   try {
-    const response = await fetch(`${baseUrl}/tasks/${id}`, {
+    const response = await fetch(`${protocol}${baseUrl}/tasks/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         isDone
@@ -108,7 +109,7 @@ export const fetchUpdataTask = async ({id, isDone}: UpdateTask, token: string) =
 export const fetchDeleteTask = async (id: number, token: string) => {
   
   try {
-    const response = await fetch(`${baseUrl}/tasks/${id}`, {
+    const response = await fetch(`${protocol}${baseUrl}/tasks/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -127,7 +128,7 @@ export const fetchDeleteTask = async (id: number, token: string) => {
 export const fetchUser = async (id: number, token: string) => {
 
   try {
-    const response = await fetch(`${baseUrl}/users/${id}`, {
+    const response = await fetch(`${protocol}${baseUrl}/users/${id}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -145,7 +146,7 @@ export const fetchUser = async (id: number, token: string) => {
 
 export const fetchAccountVerify = async (token: string) => {
   try {
-    const response = await fetch(`${baseUrl}/verify-email?token=${token}`, {
+    const response = await fetch(`${protocol}${baseUrl}/verify-email?token=${token}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -161,7 +162,7 @@ export const fetchAccountVerify = async (token: string) => {
 
 export const fetchRecoveryAccount = async (email: string) => {
   try {
-    const response = await fetch(`${baseUrl}/recovery-account`, {
+    const response = await fetch(`${protocol}${baseUrl}/recovery-account`, {
       method: 'POST',
       body: JSON.stringify({
         email
@@ -180,7 +181,7 @@ export const fetchRecoveryAccount = async (email: string) => {
 
 export const fetchChangePassword = async (password: string, token: string) => {
   try {
-    const response = await fetch(`${baseUrl}/users/change-password`, {
+    const response = await fetch(`${protocol}${baseUrl}/users/change-password`, {
       method: 'POST',
       body: JSON.stringify({
         password,
