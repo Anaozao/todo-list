@@ -1,7 +1,7 @@
 import { CreateAccountData, CreateTask, UpdateTask } from "../types";
 
-const baseUrl = import.meta.env.BACK_URL
-const protocol = import.meta.env.URL_PROTOCOL
+const baseUrl = import.meta.env.VITE_BACK_URL
+const protocol = import.meta.env.VITE_URL_PROTOCOL
 
 export const fetchLogin = async (email: string, password: string) => {
   try {
