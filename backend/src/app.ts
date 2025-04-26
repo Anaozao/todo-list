@@ -7,7 +7,7 @@ import LoginRouter from './routers/LoginRouter';
 import VerifyEmailRouter from './routers/VerifyEmailRouter';
 import AccountRecoveryRouter from './routers/AccountRecoveryRouter';
 
-const frontUrl = process.env.FRONT_BASE_URL
+const frontUrl = process.env.FRONT_BASE_URL;
 
 const corsOptions = {
   origin: frontUrl,
@@ -28,7 +28,6 @@ class App {
   private config():void {
     this.app.use(cors(corsOptions));
     this.app.use(express.json());
-    this.app.use(accessControl);
     this.app.use('/users', UserRouter);
     this.app.use('/tasks', TaskRouter);
     this.app.use('/login', LoginRouter);
