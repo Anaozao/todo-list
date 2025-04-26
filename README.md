@@ -17,7 +17,8 @@ Faça o clone do repositório na sua máquina
   - Acesse a diretório "backend" e utilize o comando "npm install" e depois "npm run dev"
   - Crie um arquivo .env no diretório "frontend" e defina as variáveis de ambiente de acordo com o arquivo .env.example
   - Acesse o diretório "frontend" e utilize o comando "npm install" e depois "npm run dev", e verifique no terminal o link para abrir a aplicação no browser.
-  - Para rodar a aplicação via Docker:
+
+Para rodar a aplicação via Docker:
 
 Faça o clone do repositório na sua máquina
   - Crie um arquivo .env no diretório "backend" e defina as variáveis de ambiente de acordo com o arquivo .env.example
